@@ -12,8 +12,9 @@ def parse_line(line: str) -> Tuple[List[float], List[float]]:
         tuple of input list and output list
     """
     tokens = line.split(",")
-    out = int(tokens[15])
-    output = [0 if out == "Normal_Weight" else 0.33 if out == "Obesity_Type_I"  else 0.66 if out == "Obesity_Type_II" else 1]
+    out = int(tokens[16])
+    print(out)
+    output = [0 if out == "Normal_Weight\n" else 0.33 if out == 'Obesity_Type_I\n'  else 0.66 if out == "Obesity_Type_II\n" else 1]
 
     inpt = [float(x) for x in tokens[:15]]
     return (inpt, output)
